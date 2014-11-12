@@ -3,5 +3,7 @@ syntax: glob
 db.sqlite3
 *.pyc
 *.swp
-settings_local.py
+roledb/settings/local.py
 staticroot/
+ec-roledb.sublime-project
+ec-roledb.sublime-workspace

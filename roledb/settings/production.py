@@ -1,11 +1,11 @@
 
-from roledb.settings import *
+from .base import *
 
 DEBUG = False
 TEMPLATE_DEBUG = False
 
 try:
-  from settings_local import *
+  from local import *
 except ImportError:
   pass
 
