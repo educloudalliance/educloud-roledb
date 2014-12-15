@@ -102,7 +102,7 @@ REST_FRAMEWORK = {
 
 # Try and import local settings which can be used to override any of the above.
 try:
-    from settings_local import *
+    from prod_settings import *
 except ImportError:
     pass
 

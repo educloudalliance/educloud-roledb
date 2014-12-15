@@ -109,7 +109,7 @@ For example: manage.py csv_import file.csv dreamschool,facebook,twitter,linkedin
     # There can be multiple attributes with the same name and different value.
     # This is one of the reasons we have the source parameter to tell where the data came from.
     for k,v in a.iteritems():
-      ua,_ = UserAttribute.objects.get_or_create(user=user, attribute=self.attribute_names[k], value=v, source=self.source)
+      ua,_ = UserAttribute.objects.get_or_create(user=user, attribute=self.attribute_names[k], value=v, data_source=self.source)
 
     # Create Municipality
     # If you leave this empty on the CLI it will default to '-'
@@ -120,5 +120,5 @@ For example: manage.py csv_import file.csv dreamschool,facebook,twitter,linkedin
     school,_ = School.objects.get_or_create(school_id=d['school'], defaults={'municipality': municipality, 'name': d['school']})
 
     # Create Attendance object for User. There can be more than one Attendance per User.
-    att,_ = Attendance.objects.get_or_create(user=user, school=school, role=self.role_names[d['role']], group=d['group'], source=self.source)
+    att,_ = Attendance.objects.get_or_create(user=user, school=school, role=self.role_names[d['role']], group=d['group'], data_source=self.source)
 
